@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning - Complete Exam Math Problems & Formulas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #1a5276;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #ebedef;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+        .guide-box {
+            background-color: #fef9e7;
+            border-right: 6px solid #f39c12;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            direction: rtl;
+            text-align: right;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .guide-box h4 {
+            margin: 0 0 8px 0;
+            color: #d35400;
+            font-size: 1.1em;
+        }
+        .problem-box {
+            background: #eaf2f8;
+            border-left: 5px solid #2980b9;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .solution-box {
+            background: #fdfefe;
+            border: 1px solid #d6dbdf;
+            border-left: 5px solid #27ae60;
+            padding: 18px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #d5dbdb;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9f9;
+        }
+        code {
+            background: #eaeded;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #c0392b;
+        }
+        .formula-card {
+            background: #f4ecf7;
+            border-left: 5px solid #8e44ad;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Machine Learning Complete Exam Guide: All Problems & Formulas</h1>
+
+    <!-- PROBLEM 1 -->
+    <h2>Problem 1: Linear Regression Parameter Update (Gradient Descent)</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 2 - Linear Regression with One Variable):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الثانية.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Assume θ₀, θ₁, α</code> / <code>Compute total error</code> / <code>Update values of θ₀ and θ₁ after first iteration</code>.</li>
+            <li><strong>القانون المستخدم:</strong> 
+                <br>1. دالة التنبؤ: <code>h(x) = θ₀ + θ₁x</code>
+                <br>2. دالة التكلفة (MSE): <code>J(θ) = (1 / 2m) * Σ(h(x) - y)²</code>
+                <br>3. قانون تحديث θ₀: <code>θ₀_new = θ₀ - α * (1/m) * Σ(h(x) - y)</code>
+                <br>4. قانون تحديث θ₁: <code>θ₁_new = θ₁ - α * (1/m) * Σ[(h(x) - y) * x]</code>
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Consider the following training data for linear regression:</p>
+        <table>
+            <tr><th>X</th><th>y</th></tr>
+            <tr><td>2</td><td>3</td></tr>
+            <tr><td>3</td><td>4</td></tr>
+            <tr><td>4</td><td>5</td></tr>
+        </table>
+        <p>You are using linear regression and assume <code>θ₀ = 2</code>, <code>θ₁ = 2</code>, and <code>α = 0.1</code>.</p>
+        <p>Compute the total error and update the values of <code>θ₀</code> and <code>θ₁</code> after the first iteration.</p>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+        <p><strong>1. Initial Hypothesis Equation:</strong><br>
+        <code>h_θ(x) = θ₀ + θ₁x = 2 + 2x</code></p>
+
+        <p><strong>2. Compute Predictions and Errors for each sample (m = 3):</strong></p>
+        <ul>
+            <li>Sample 1 (x = 2, y = 3):<br>
+                <code>h(2) = 2 + 2(2) = 6</code><br>
+                <code>(h - y) = 6 - 3 = 3</code><br>
+                <code>(h - y)² = 9</code>
+            </li>
+            <li>Sample 2 (x = 3, y = 4):<br>
+                <code>h(3) = 2 + 2(3) = 8</code><br>
+                <code>(h - y) = 8 - 4 = 4</code><br>
+                <code>(h - y)² = 16</code>
+            </li>
+            <li>Sample 3 (x = 4, y = 5):<br>
+                <code>h(4) = 2 + 2(4) = 10</code><br>
+                <code>(h - y) = 10 - 5 = 5</code><br>
+                <code>(h - y)² = 25</code>
+            </li>
+        </ul>
+
+        <p><strong>3. Calculate Total Cost Function (MSE Error):</strong><br>
+        <code>Σ(h - y) = 3 + 4 + 5 = 12</code><br>
+        <code>Σ(h - y)² = 9 + 16 + 25 = 50</code><br>
+        <code>J(θ₀, θ₁) = (1 / 2m) * Σ(h - y)² = (1 / (2 * 3)) * 50 = 50 / 6 = 8.333</code></p>
+
+        <p><strong>4. Calculate Term for θ₁ Update:</strong><br>
+        <code>Σ[(h - y) * x] = (3 * 2) + (4 * 3) + (5 * 4) = 6 + 12 + 20 = 38</code></p>
+
+        <p><strong>5. Update Parameters θ₀ and θ₁:</strong><br>
+        <code>θ₀_new = θ₀ - α * (1/m) * Σ(h - y) = 2 - 0.1 * (1/3) * (12) = 2 - 0.4 = 1.6</code><br>
+        <code>θ₁_new = θ₁ - α * (1/m) * Σ[(h - y) * x] = 2 - 0.1 * (1/3) * (38) = 2 - 1.2667 = 0.7333</code></p>
+
+        <p><strong>Final Answer:</strong> Total Error <code>J(θ) = 8.333</code>, Updated Parameters: <code>θ₀ = 1.6</code>, <code>θ₁ = 0.7333</code></p>
+    </div>
+
+    <!-- PROBLEM 2 -->
+    <h2>Problem 2: Linear Regression Model Evaluation (Testing MSE & RMSE)</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 6 - Model Evaluation & Metrics):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة السادسة.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>h(x) = 1000 + 1000x</code> / <code>Testing Data Table</code> / <code>Evaluate MSE and RMSE</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. التنبؤ لكل نقطة: <code>Predicted y = 1000 + 1000 * x</code>
+                <br>2. مربع الخطأ: <code>(Predicted y - Actual y)²</code>
+                <br>3. دالة MSE: <code>MSE = (1 / 2m) * Σ(Predicted y - Actual y)²</code>
+                <br>4. دالة RMSE: <code>RMSE = √[ MSE ]</code>
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Given the linear regression model <code>h(x) = 1000 + 1000x</code>, evaluate the model performance using <strong>MSE</strong> and <strong>RMSE</strong> for the following Testing Data (m = 4):</p>
+        <table>
+            <tr><th>Cylinder Number (x)</th><th>Actual Price (y)</th></tr>
+            <tr><td>2</td><td>3000</td></tr>
+            <tr><td>3</td><td>3400</td></tr>
+            <tr><td>4</td><td>5200</td></tr>
+            <tr><td>5</td><td>5600</td></tr>
+        </table>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+        <table>
+            <tr><th>x</th><th>Actual y</th><th>Predicted y = 1000 + 1000(x)</th><th>(Predicted y - Actual y)</th><th>Squared Error (Predicted y - Actual y)²</th></tr>
+            <tr><td>2</td><td>3000</td><td>1000 + 1000(2) = 3000</td><td>3000 - 3000 = 0</td><td>0</td></tr>
+            <tr><td>3</td><td>3400</td><td>1000 + 1000(3) = 4000</td><td>4000 - 3400 = 600</td><td>360,000</td></tr>
+            <tr><td>4</td><td>5200</td><td>1000 + 1000(4) = 5000</td><td>5000 - 5200 = -200</td><td>40,000</td></tr>
+            <tr><td>5</td><td>5600</td><td>1000 + 1000(5) = 6000</td><td>6000 - 5600 = 400</td><td>160,000</td></tr>
+            <tr><th colspan="4">Sum of Squared Errors</th><th>560,000</th></tr>
+        </table>
+
+        <p><strong>1. Calculate Mean Squared Error (MSE):</strong><br>
+        <code>MSE = (1 / 2m) * Σ(Predicted y - Actual y)² = (1 / (2 * 4)) * 560,000 = 560,000 / 8 = 70,000</code></p>
+
+        <p><strong>2. Calculate Root Mean Squared Error (RMSE):</strong><br>
+        <code>RMSE = √[ MSE ] = √[ 70,000 ] ≈ 264.575</code></p>
+    </div>
+
+    <!-- PROBLEM 3 -->
+    <h2>Problem 3: K-Nearest Neighbors (KNN) Classification</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 4 - KNN Algorithm):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الرابعة.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Predict class for new instance</code> / <code>K = 3</code> / <code>Euclidean distance</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. مسافة إقليدس: <code>d = √[(x₁_new - x₁_i)² + (x₂_new - x₂_i)²]</code>
+                <br>2. الترتيب التصاعدي للمسافات (Rank).
+                <br>3. اختيار أول K جيران وأخذ رأي الأغلبية (Majority Vote).
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Predict the class for a new patient <code>(Height = 170, Weight = 57)</code> using <code>K = 3</code> and Euclidean distance based on the training data below:</p>
+        <table>
+            <tr><th>Height (CM)</th><th>Weight (KG)</th><th>Class</th></tr>
+            <tr><td>167</td><td>51</td><td>Underweight</td></tr>
+            <tr><td>182</td><td>62</td><td>Normal</td></tr>
+            <tr><td>176</td><td>69</td><td>Normal</td></tr>
+            <tr><td>173</td><td>64</td><td>Normal</td></tr>
+            <tr><td>172</td><td>65</td><td>Normal</td></tr>
+            <tr><td>174</td><td>56</td><td>Underweight</td></tr>
+            <tr><td>169</td><td>58</td><td>Normal</td></tr>
+            <tr><td>173</td><td>57</td><td>Normal</td></tr>
+            <tr><td>170</td><td>55</td><td>Normal</td></tr>
+        </table>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+        <p>Euclidean Distance Formula: <code>d = √[(Height - 170)² + (Weight - 57)²]</code></p>
+
+        <table>
+            <tr><th>Height</th><th>Weight</th><th>Class</th><th>Distance Calculation</th><th>Distance</th><th>Rank</th></tr>
+            <tr><td>169</td><td>58</td><td>Normal</td><td>√[(169-170)² + (58-57)²] = √[1 + 1]</td><td>1.41</td><td>1</td></tr>
+            <tr><td>170</td><td>55</td><td>Normal</td><td>√[(170-170)² + (55-57)²] = √[0 + 4]</td><td>2.00</td><td>2</td></tr>
+            <tr><td>173</td><td>57</td><td>Normal</td><td>√[(173-170)² + (57-57)²] = √[9 + 0]</td><td>3.00</td><td>3</td></tr>
+            <tr><td>174</td><td>56</td><td>Underweight</td><td>√[(174-170)² + (56-57)²] = √[16 + 1]</td><td>4.12</td><td>4</td></tr>
+            <tr><td>167</td><td>51</td><td>Underweight</td><td>√[(167-170)² + (51-57)²] = √[9 + 36]</td><td>6.71</td><td>5</td></tr>
+            <tr><td>173</td><td>64</td><td>Normal</td><td>√[(173-170)² + (64-57)²] = √[9 + 49]</td><td>7.62</td><td>6</td></tr>
+            <tr><td>172</td><td>65</td><td>Normal</td><td>√[(172-170)² + (65-57)²] = √[4 + 64]</td><td>8.25</td><td>7</td></tr>
+            <tr><td>182</td><td>62</td><td>Normal</td><td>√[(182-170)² + (62-57)²] = √[144 + 25]</td><td>13.00</td><td>8</td></tr>
+            <tr><td>176</td><td>69</td><td>Normal</td><td>√[(176-170)² + (69-57)²] = √[36 + 144]</td><td>13.42</td><td>9</td></tr>
+        </table>
+
+        <p><strong>Select Top K = 3 Neighbors:</strong></p>
+        <ul>
+            <li>Neighbor 1: Normal (Distance = 1.41)</li>
+            <li>Neighbor 2: Normal (Distance = 2.00)</li>
+            <li>Neighbor 3: Normal (Distance = 3.00)</li>
+        </ul>
+        <p><strong>Final Decision:</strong> All 3 nearest neighbors are <code>Normal</code>. Therefore, the predicted class for <code>(170, 57)</code> is <strong>Normal</strong>.</p>
+    </div>
+
+    <!-- PROBLEM 4 -->
+    <h2>Problem 4: K-Nearest Neighbors (KNN) Regression</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 4 - KNN Regression):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الرابعة.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>KNN Regression</code> / <code>Predict weight for new point (2, 1)</code> / <code>K = 3</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. حساب مسافة إقليدس لكل النقاط: <code>d = √[(x₁ - x₁_new)² + (x₂ - x₂_new)²]</code>
+                <br>2. اختيار أول K جيران.
+                <br>3. حساب المتوسط الحسابي لقيم المستهدف: <code>Predicted Value = (y₁ + y₂ + ... + y_k) / K</code>
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Given the dataset below, predict the target <code>weight</code> for a new data point <code>(x1 = 2, x2 = 1)</code> using <strong>KNN Regression</strong> with <code>K = 3</code>:</p>
+        <table>
+            <tr><th>x1</th><th>x2</th><th>weight (y)</th></tr>
+            <tr><td>7</td><td>7</td><td>6</td></tr>
+            <tr><td>7</td><td>4</td><td>3</td></tr>
+            <tr><td>3</td><td>4</td><td>2</td></tr>
+            <tr><td>1</td><td>3</td><td>1</td></tr>
+        </table>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+        <p>Calculate Euclidean distance from <code>(2, 1)</code> to all dataset points:</p>
+        <ul>
+            <li>Point 1 (7, 7): <code>d = √[(7-2)² + (7-1)²] = √[25 + 36] = √61 ≈ 7.81</code> (Rank 4)</li>
+            <li>Point 2 (7, 4): <code>d = √[(7-2)² + (4-1)²] = √[25 + 9] = √34 ≈ 5.83</code> (Rank 3)</li>
+            <li>Point 3 (3, 4): <code>d = √[(3-2)² + (4-1)²] = √[1 + 9] = √10 ≈ 3.16</code> (Rank 2)</li>
+            <li>Point 4 (1, 3): <code>d = √[(1-2)² + (3-1)²] = √[1 + 4] = √5 ≈ 2.23</code> (Rank 1)</li>
+        </ul>
+
+        <p><strong>Top K = 3 Nearest Neighbors:</strong></p>
+        <ul>
+            <li>1st Nearest Neighbor: Point 4 (weight = 1)</li>
+            <li>2nd Nearest Neighbor: Point 3 (weight = 2)</li>
+            <li>3rd Nearest Neighbor: Point 2 (weight = 3)</li>
+        </ul>
+
+        <p><strong>KNN Regression Average Prediction:</strong><br>
+        <code>Predicted Weight = (weight_4 + weight_3 + weight_2) / K = (1 + 2 + 3) / 3 = 6 / 3 = 2.0</code></p>
+    </div>
+
+    <!-- PROBLEM 5 -->
+    <h2>Problem 5: Naive Bayes Classification</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 5 - Naive Bayes Classifier):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الخامسة.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Estimate conditional probabilities</code> / <code>Predict class for new instance</code> / <code>PlayTennis or Species</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. الاحتمال القبلي: <code>P(Class) = Count(Class) / Total_Samples</code>
+                <br>2. الاحتمال الشرطي المركب: <code>P(Class | X) ∝ P(Class) * P(x₁|Class) * P(x₂|Class) * ... * P(xₙ|Class)</code>
+                <br>3. المقارنة والقرار للفئة ذات الاحتمال الأعلى.
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Given 14 training examples (9 PlayTennis = Yes, 5 PlayTennis = No), classify the new instance:</p>
+        <p><code>X_new = &lt;Outlook = sunny, Temperature = cool, Humidity = high, Wind = strong&gt;</code></p>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+
+        <p><strong>1. Prior Probabilities:</strong><br>
+        <code>P(PlayTennis = yes) = 9 / 14 = 0.643</code><br>
+        <code>P(PlayTennis = no) = 5 / 14 = 0.357</code></p>
+
+        <p><strong>2. Conditional Probabilities for each feature:</strong></p>
+        <table>
+            <tr><th>Feature Value</th><th>P(Feature | Yes)</th><th>P(Feature | No)</th></tr>
+            <tr><td>Outlook = sunny</td><td>2 / 9</td><td>3 / 5</td></tr>
+            <tr><td>Temperature = cool</td><td>3 / 9</td><td>1 / 5</td></tr>
+            <tr><td>Humidity = high</td><td>3 / 9</td><td>4 / 5</td></tr>
+            <tr><td>Wind = strong</td><td>3 / 9</td><td>3 / 5</td></tr>
+        </table>
+
+        <p><strong>3. Posterior Probability Calculations:</strong></p>
+        <p><code>P(yes | X_new) ∝ P(yes) * P(sunny|yes) * P(cool|yes) * P(high|yes) * P(strong|yes)</code><br>
+        <code>= (9/14) * (2/9) * (3/9) * (3/9) * (3/9) = (0.643) * (0.222) * (0.333) * (0.333) * (0.333) ≈ 0.0053</code></p>
+
+        <p><code>P(no | X_new) ∝ P(no) * P(sunny|no) * P(cool|no) * P(high|no) * P(strong|no)</code><br>
+        <code>= (5/14) * (3/5) * (1/5) * (4/5) * (3/5) = (0.357) * (0.600) * (0.200) * (0.800) * (0.600) ≈ 0.0206</code></p>
+
+        <p><strong>4. Comparison and Final Decision:</strong><br>
+        Since <code>P(no | X_new) > P(yes | X_new)</code> (0.0206 > 0.0053), the predicted class for the new instance is <strong>No</strong> (PlayTennis = No).</p>
+    </div>
+
+    <!-- PROBLEM 6 -->
+    <h2>Problem 6: Confusion Matrix Evaluation Metrics</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 6 - Classification Metrics):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة السادسة.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Evaluate accuracy, precision, recall, F1-score</code> / <code>Confusion Matrix</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. Accuracy = <code>(TP + TN) / Total</code>
+                <br>2. Precision = <code>TP / (TP + FP)</code>
+                <br>3. Recall = <code>TP / (TP + FN)</code>
+                <br>4. F1-Score = <code>2 * (Precision * Recall) / (Precision + Recall)</code>
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Solve the following confusion matrix by evaluating Accuracy, Precision, Recall, and F1-score for predicting whether an email is "Spam" or "Not Spam" (Test set of 200 emails):</p>
+        <table>
+            <tr><th></th><th>Actual Spam</th><th>Actual Not Spam</th></tr>
+            <tr><th>Predicted Spam</th><td>TP = 120</td><td>FP = 20</td></tr>
+            <tr><th>Predicted Not Spam</th><td>FN = 10</td><td>TN = 50</td></tr>
+        </table>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+
+        <p><strong>1. Accuracy:</strong><br>
+        <code>Accuracy = (TP + TN) / Total = (120 + 50) / 200 = 170 / 200 = 0.85 (85%)</code></p>
+
+        <p><strong>2. Precision:</strong><br>
+        <code>Precision = TP / (TP + FP) = 120 / (120 + 20) = 120 / 140 ≈ 0.857 (85.7%)</code></p>
+
+        <p><strong>3. Recall:</strong><br>
+        <code>Recall = TP / (TP + FN) = 120 / (120 + 10) = 120 / 130 ≈ 0.923 (92.3%)</code></p>
+
+        <p><strong>4. F1-Score:</strong><br>
+        <code>F1-score = 2 * (Precision * Recall) / (Precision + Recall)</code><br>
+        <code>= 2 * (0.857 * 0.923) / (0.857 + 0.923) = 1.5819 / 1.780 ≈ 0.889 (88.9%)</code></p>
+    </div>
+
+    <!-- PROBLEM 7 -->
+    <h2>Problem 7: Data Smoothing & Binning</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 1 - Data Preprocessing & Smoothing):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الأولى.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Equal-frequency (equi-depth) binning</code> / <code>Smoothing by bin means / boundaries</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. عدد العناصر بكل فئة = <code>Total Items / Number of Bins</code>
+                <br>2. Smoothing by Bin Means: استبدال كل عنصر في الفئة بوسط الفئة الحسابي.
+                <br>3. Smoothing by Boundaries: استبدال العناصر الداخلية بأقرب قيمة حدية (Min أو Max).
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Sorted price data: <code>[4, 8, 9, 15, 21, 21, 24, 25, 26, 28, 29, 34]</code> (12 elements).</p>
+        <p>Partition data into 3 equal-frequency bins, then smooth by <strong>bin means</strong> and <strong>bin boundaries</strong>.</p>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+
+        <p><strong>1. Partitioning into 3 Equal-Frequency Bins (12 / 3 = 4 elements per bin):</strong></p>
+        <ul>
+            <li>Bin 1: <code>4, 8, 9, 15</code></li>
+            <li>Bin 2: <code>21, 21, 24, 25</code></li>
+            <li>Bin 3: <code>26, 28, 29, 34</code></li>
+        </ul>
+
+        <p><strong>2. Smoothing by Bin Means:</strong></p>
+        <ul>
+            <li>Mean of Bin 1 = <code>(4 + 8 + 9 + 15) / 4 = 36 / 4 = 9</code> → Bin 1: <code>[9, 9, 9, 9]</code></li>
+            <li>Mean of Bin 2 = <code>(21 + 21 + 24 + 25) / 4 = 91 / 4 = 22.75 ≈ 23</code> → Bin 2: <code>[23, 23, 23, 23]</code></li>
+            <li>Mean of Bin 3 = <code>(26 + 28 + 29 + 34) / 4 = 117 / 4 = 29.25 ≈ 29</code> → Bin 3: <code>[29, 29, 29, 29]</code></li>
+        </ul>
+
+        <p><strong>3. Smoothing by Bin Boundaries:</strong></p>
+        <ul>
+            <li>Bin 1 Boundaries [4, 15]: 8 is closer to 4; 9 is closer to 4 → Bin 1: <code>[4, 4, 4, 15]</code></li>
+            <li>Bin 2 Boundaries [21, 25]: 24 is closer to 25 → Bin 2: <code>[21, 21, 25, 25]</code></li>
+            <li>Bin 3 Boundaries [26, 34]: 28 is closer to 26; 29 is closer to 26 → Bin 3: <code>[26, 26, 26, 34]</code></li>
+        </ul>
+    </div>
+
+    <!-- PROBLEM 8 -->
+    <h2>Problem 8: Data Normalization (Min-Max & Z-Score)</h2>
+    <div class="guide-box">
+        <h4>💡 دليل السؤال (المحاضرة 1 - Data Normalization):</h4>
+        <ul>
+            <li><strong>المحاضرة:</strong> المحاضرة الأولى.</li>
+            <li><strong>الكلمات المفتاحية في السؤال:</strong> <code>Min-max normalization</code> / <code>Z-score normalization</code> / <code>Decimal scaling</code>.</li>
+            <li><strong>القانون المستخدم:</strong>
+                <br>1. Min-Max: <code>v' = [(v - min) / (max - min)] * (new_max - new_min) + new_min</code>
+                <br>2. Z-score: <code>v' = (v - μ) / σ</code>
+                <br>3. Decimal Scaling: <code>v' = v / 10^j</code>
+            </li>
+        </ul>
+    </div>
+    <div class="problem-box">
+        <p><strong>Question Statement:</strong></p>
+        <p>Suppose that an attribute income ranges from <code>$12,000</code> to <code>$98,000</code>.</p>
+        <p>a) Map income value <code>$73,600</code> into the range <code>[0.0, 1.0]</code> using <strong>Min-Max Normalization</strong>.</p>
+        <p>b) Normalize income <code>$73,600</code> using <strong>Z-Score Normalization</strong> given mean <code>μ = 54,000</code> and standard deviation <code>σ = 16,000</code>.</p>
+    </div>
+    <div class="solution-box">
+        <p><strong>Step-by-Step Solution:</strong></p>
+
+        <p><strong>a) Min-Max Normalization:</strong><br>
+        Formula: <code>v' = [(v - min) / (max - min)] * (new_max - new_min) + new_min</code><br>
+        <code>v' = [(73,600 - 12,000) / (98,000 - 12,000)] * (1.0 - 0.0) + 0.0</code><br>
+        <code>v' = [61,600 / 86,000] * 1.0 = 0.7163</code></p>
+
+        <p><strong>b) Z-Score Normalization:</strong><br>
+        Formula: <code>v' = (v - μ) / σ</code><br>
+        <code>v' = (73,600 - 54,000) / 16,000 = 19,600 / 16,000 = 1.225</code></p>
+    </div>
+
+    <!-- FORMULA SUMMARY SECTION -->
+    <h2>📌 Complete Machine Learning Formula Sheet (All Lectures)</h2>
+    
+    <div class="formula-card">
+        <h3>1. Linear Regression Equations (Lectures 2 & 3)</h3>
+        <ul>
+            <li><strong>Hypothesis (Single Variable):</strong> <code>h_θ(x) = θ₀ + θ₁x</code></li>
+            <li><strong>Hypothesis (Multiple Variables):</strong> <code>h_θ(x) = θᵀX = θ₀x₀ + θ₁x₁ + θ₂x₂ + ... + θₙxₙ</code> (where <code>x₀ = 1</code>)</li>
+            <li><strong>Cost Function (MSE):</strong> <code>J(θ) = (1 / 2m) * Σ(h_θ(x⁽ⁱ⁾) - y⁽ⁱ⁾)²</code></li>
+            <li><strong>Gradient Descent Update:</strong> <code>θⱼ := θⱼ - α * (1/m) * Σ[(h_θ(x⁽ⁱ⁾) - y⁽ⁱ⁾) * xⱼ⁽ⁱ⁾]</code></li>
+        </ul>
+    </div>
+
+    <div class="formula-card">
+        <h3>2. Distance & Dissimilarity Measures (Lectures 1 & 4)</h3>
+        <ul>
+            <li><strong>Euclidean Distance (L2 norm):</strong> <code>d(i, j) = √[ Σ (x_if - x_jf)² ]</code></li>
+            <li><strong>Manhattan Distance (L1 norm):</strong> <code>d(i, j) = Σ |x_if - x_jf|</code></li>
+            <li><strong>Nominal Attribute Dissimilarity:</strong> <code>d(i, j) = (p - m) / p</code> (p = total attributes, m = matching attributes)</li>
+        </ul>
+    </div>
+
+    <div class="formula-card">
+        <h3>3. Classification Evaluation Metrics (Lecture 6)</h3>
+        <ul>
+            <li><strong>Accuracy:</strong> <code>Accuracy = (TP + TN) / (TP + TN + FP + FN)</code></li>
+            <li><strong>Precision:</strong> <code>Precision = TP / (TP + FP)</code></li>
+            <li><strong>Recall:</strong> <code>Recall = TP / (TP + FN)</code></li>
+            <li><strong>F1-Score:</strong> <code>F1-score = 2 * (Precision * Recall) / (Precision + Recall)</code></li>
+        </ul>
+    </div>
+
+    <div class="formula-card">
+        <h3>4. Naive Bayes & Regularization (Lectures 5 & 6)</h3>
+        <ul>
+            <li><strong>Bayes Rule:</strong> <code>P(Y | X) = [ P(Y) * P(X | Y) ] / P(X)</code></li>
+            <li><strong>Ridge Regularization (L2) Cost:</strong> <code>J(θ) = (1 / 2m) [ Σ(h_θ(x⁽ⁱ⁾) - y⁽ⁱ⁾)² + λ Σ θⱼ² ]</code></li>
+            <li><strong>Regularized Logistic Cost:</strong> <code>J(θ) = - (1/m) Σ [ y log(h) + (1-y) log(1-h) ] + (λ / 2m) Σ θⱼ²</code></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
